@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About - Anamika</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Orbitron:wght@500;700;900&family=Tektur:wght@500;700;800&display=swap" rel="stylesheet">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = { theme: { extend: { fontFamily: { sans: ['Poppins', 'sans-serif'] } } } };
+	</script>
+	<style>
+		:root { --bg: #f7f3ed; --fg: #1a1a1a; --about-blue: #175bd6; }
+		body {
+			font-family: 'Poppins', sans-serif; background-color: var(--bg);
+			background-image: url('https://raw.githubusercontent.com/anamika-ctrl/anamika-ctlr/3fc32cde524814a343aed24c3c980598a2745724/images/image%2028.png');
+			background-size: cover; background-position: center; background-attachment: fixed;
+			background-repeat: no-repeat; color: var(--fg); margin: 0; padding: 0;
+		}
+		.about-section {
+			color: inherit; font-family: "Tektur", "Orbitron", system-ui, sans-serif;
+			-webkit-font-smoothing: antialiased; position: relative; min-height: 100vh; overflow: hidden;
+			display: grid; grid-template-columns: minmax(200px, 1fr) auto minmax(260px, 1.2fr);
+			align-items: center; gap: clamp(10px, 2vw, 40px); padding: clamp(40px, 6vw, 80px) 7vw 120px;
+		}
+		.panel, .portrait-wrap, .name-block { position: relative; z-index: 1; }
+		.panel { transition: transform 180ms ease; will-change: transform; z-index: 1; }
+		.design-panel { align-self: end; justify-self: start; margin-bottom: 12vh; width: max-content; min-width: 300px; }
+		.facts-panel { align-self: start; justify-self: start; margin-top: 4vh; margin-left: -2vw; width: min(100%, 350px); }
+		.about-section .label {
+			display: inline-flex; align-items: center; min-height: 44px; padding: 7px 18px; margin: 0 0 13px;
+			background: var(--about-blue); color: #fff; font-family: "Orbitron", system-ui, sans-serif;
+			font-size: clamp(18px, 1.55vw, 24px); font-style: italic; font-weight: 900; line-height: 1;
+		}
+		.about-section ul { margin: 0; padding-left: 29px; list-style-type: disc; }
+		.about-section li { padding-left: 9px; font-size: clamp(18px, 1.85vw, 25px); line-height: 1.28; letter-spacing: 0.6px; font-weight: normal; white-space: nowrap; }
+		.design-panel li { margin: 1px 0; }
+		.facts-panel li { margin: 0 0 28px; white-space: normal; }
+		.portrait-wrap { justify-self: center; width: clamp(400px, 50vw, 750px); min-width: 0; z-index: 5; pointer-events: none; margin-left: -5vw; }
+		.portrait-img { width: 100%; height: auto; display: block; object-fit: contain; }
+		.name-block { position: absolute; left: 50%; bottom: 31px; transform: translateX(-50%); width: min(92vw, 760px); text-align: center; z-index: 10; }
+		.name-block h1 { margin: 0; font-family: "Orbitron", system-ui, sans-serif; font-size: clamp(48px, 6vw, 78px); font-weight: 900; line-height: 0.88; letter-spacing: 0; color: inherit; }
+		.name-block p { margin: 8px 0 0; font-size: clamp(16px, 1.8vw, 24px); line-height: 1.1; letter-spacing: 0.7px; font-family: "Tektur", sans-serif; color: inherit; }
+		@media (max-width: 980px) {
+			.about-section { grid-template-columns: 1fr; justify-items: center; gap: 30px; padding: 34px 24px 142px; }
+			.portrait-wrap { width: min(100%, 550px); margin-left: 0; margin-right: 0; }
+			.design-panel, .facts-panel { justify-self: center; align-self: auto; width: min(100%, 430px); margin: 0; }
+		}
+		@media (max-width: 520px) {
+			.about-section { padding-inline: 18px; }
+			.portrait-wrap { min-width: 0; width: 100%; }
+			.about-section li { font-size: 16px; white-space: normal; }
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<section id="about" class="about-section text-left" aria-labelledby="about-name">
+			<div class="panel design-panel">
+				<h2 class="label">WHAT I DESIGN</h2>
+				<ul>
+					<li>Product Design</li><li>UI/UX Design</li><li>Interaction Design</li>
+					<li>Design Systems</li><li>Motion Graphics</li>
+				</ul>
+			</div>
+			<div class="portrait-wrap" aria-label="Portrait artwork">
+				<img src="https://raw.githubusercontent.com/anamika-ctrl/anamika-ctlr/2c2509048105327e8d7a5fd4e569281a7ea044c4/images/about/ProfileP.png" alt="Anamika cyborg portrait artwork" class="portrait-img">
+			</div>
+			<div class="panel facts-panel">
+				<h2 class="label">FUN FACTS</h2>
+				<ul>
+					<li>Started career in animation before moving into product design</li>
+					<li>Built a concept product called GoFarming</li>
+					<li>Love learning new things/hobbies</li>
+					<li>Enjoy solving real-world problems through design</li>
+				</ul>
+			</div>
+			<div class="name-block">
+				<h1 id="about-name">ANAMIKA</h1>
+				<p>Designer &bull; Animator &bull; Problem Solver</p>
+			</div>
+		</section>
+	</main>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const motionSections = document.querySelectorAll(".design-panel, .facts-panel");
+			const moveSection = (section, event) => {
+				motionSections.forEach((otherSection) => {
+					if (otherSection !== section) otherSection.style.transform = "translate(0, 0)";
+				});
+				const rect = section.getBoundingClientRect();
+				const x = ((event.clientX - rect.left) / rect.width - 0.5) * 14;
+				const y = ((event.clientY - rect.top) / rect.height - 0.5) * 14;
+				section.style.transform = `translate(${x.toFixed(2)}px, ${y.toFixed(2)}px)`;
+			};
+			motionSections.forEach((section) => {
+				section.addEventListener("pointerenter", (event) => moveSection(section, event));
+				section.addEventListener("pointermove", (event) => moveSection(section, event));
+				section.addEventListener("pointerleave", () => { section.style.transform = "translate(0, 0)"; });
+			});
+		});
+	</script>
+</body>
+</html>
